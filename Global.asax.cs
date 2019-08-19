@@ -24,7 +24,17 @@ namespace AplicacionSesion002
             Application["Aplicaciones"] = (int)Application["Aplicaciones"] + 1;
                 
         }
-        //Handler que se ejecuta cuando se crea una sesion
 
+        //Handler que se ejecuta cuando se crea una sesion
+        void Session_Start(object sender,EventArgs e)
+        {
+            Application["SesionesUsuario"] = (int)Application["SesionesUsuario"] + 1;
+        }
+
+        //Handler que se ejecuta cuando finaliza una sesion
+        void Session_End(object sender,EventArgs e)
+        {
+            Application["SesionesUsiario"] = (int)Application["SesionesUsuario"] - 1;
+        }
     }
 }
